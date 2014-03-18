@@ -4,8 +4,8 @@
   "description": "Bool, Inc. websites URL redirector",
   "main": "server.js",
   "repository": {
-      type : "git",
-      url : "https://github.com/bool-inc/url-redirector"
+      "type" : "git",
+      "url" : "https://github.com/bool-inc/url-redirector"
   },
   "author": {
       "name" : "Pablo Dorado",
