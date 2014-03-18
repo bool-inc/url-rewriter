@@ -13,6 +13,19 @@ var config = {
     port: 8080
 };
 
+app.get('/:surl', function(req, res) {
+    client.get(req.params.surl, function(err, surl){
+        console.log("Redirect to %s", surl);
+        /*if(surl == null){
+            res.writeHead(301, {location: '/'});
+            res.end();
+        } else {*/
+            res.writeHead(301, {location: surl});
+            res.end();
+        //}
+    });
+});
+
 app.use(express.static(__dirname + '/client'));
 
 app.get('/save/:url', function(req, res) {
@@ -37,19 +50,6 @@ app.get('/save/:url', function(req, res) {
             result.status = "OK-EXISTING";
             res.end(JSON.stringify(result));
         }
-    });
-});
-
-app.get('/:surl', function(req, res) {
-    client.get(req.params.surl, function(err, surl){
-        console.log("Redirect to %s", surl);
-        /*if(surl == null){
-            res.writeHead(301, {location: '/'});
-            res.end();
-        } else {*/
-            res.writeHead(301, {location: surl});
-            res.end();
-        //}
     });
 });
 
