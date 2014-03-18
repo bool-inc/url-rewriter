@@ -14,15 +14,16 @@ var config = {
 };
 
 app.get('/:surl', function(req, res) {
-    client.get(req.params.surl, function(err, surl){
-        console.log("Redirect to %s", surl);
-        /*if(surl == null){
+    var surl = req.params.surl;
+    console.log("For shortlink %s", surl);
+    client.get(surl, function(err, surl){
+        if(surl == null){
             res.writeHead(301, {location: '/'});
             res.end();
-        } else {*/
-            res.writeHead(301, {location: surl});
+        } else {
+            res.writeHead(301, {location: 'http://' + surl});
             res.end();
-        //}
+        }
     });
 });
 
