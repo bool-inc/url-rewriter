@@ -1,0 +1,15 @@
+{
+  "name": "url-redirector",
+  "version": "0.0.1",
+  "description": "Bool, Inc. websites URL redirector",
+  "main": "server.js",
+  "repository": "",
+  "author": {
+      "name" : "Pablo Dorado",
+      "email" : "pandres95@bool-inc.com",
+  },
+  "dependencies": {
+    "express": "~3.2.4",
+    "redis" : "~"
+  }
+}
